@@ -81,7 +81,7 @@ export function MarmotEasterEgg() {
     }
   };
 
-  const y = state === "hidden" || state === "running" ? 90 : 10;
+  const y = state === "hidden" || state === "running" ? 135 : 10;
   const scaleX = state === "look-left" ? -1 : 1;
 
   return (
@@ -89,7 +89,7 @@ export function MarmotEasterEgg() {
       type="button"
       onClick={handleClick}
       aria-label="Hidden marmot"
-      className="fixed bottom-0 right-5 z-50 h-28 w-24 border-none bg-transparent p-0"
+      className="fixed bottom-0 right-5 z-50 h-[168px] w-36 border-none bg-transparent p-0"
       initial={false}
       animate={
         state === "running"
@@ -108,7 +108,7 @@ export function MarmotEasterEgg() {
         }
       }}
     >
-      <Image src="/images/marmot.png" alt="Marmot easter egg" fill sizes="96px" className="object-contain" />
+      <Image src="/images/easter-egg-marmot.png" alt="Marmot easter egg" fill sizes="144px" className="object-contain" />
     </motion.button>
   );
 }
