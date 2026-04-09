@@ -42,7 +42,7 @@ export const books: Book[] = [
   {
     id: "silly-marmots",
     title: "Silly Marmots",
-    cover: "/images/books/book-silly-marmots.png",
+    cover: "/images/books/silly-marmots-en.jpg",
     description: "A playful story about kindness, imagination, and finding joy in little moments.",
     buyUrl: "#",
     rotation: -6,
@@ -51,7 +51,7 @@ export const books: Book[] = [
   {
     id: "blue",
     title: "Blue",
-    cover: "/images/books/book-blue.png",
+    cover: "/images/books/blue.jpg",
     description: "Blue learns that being different can be a superpower when friends cheer you on.",
     buyUrl: "#",
     rotation: 4,
@@ -60,7 +60,7 @@ export const books: Book[] = [
   {
     id: "only-bad-marmot",
     title: "The Only Bad Marmot",
-    cover: "/images/books/book-bad-marmot.png",
+    cover: "/images/books/only-bad-marmot.jpg",
     description: "A heartfelt tale about mistakes, repair, and second chances in a loving community.",
     buyUrl: "#",
     rotation: -3,
@@ -69,7 +69,7 @@ export const books: Book[] = [
   {
     id: "silly-marmots-zh",
     title: "Silly Marmots (Bilingual)",
-    cover: "/images/books/book-silly-marmots-zh.png",
+    cover: "/images/books/silly-marmots-zh.jpg",
     description: "A bilingual edition that celebrates family language and shared storytelling.",
     buyUrl: "#",
     rotation: 7,
@@ -78,7 +78,7 @@ export const books: Book[] = [
   {
     id: "bad-marmot-zh",
     title: "The Only Bad Marmot (Bilingual)",
-    cover: "/images/books/book-bad-marmot-zh.png",
+    cover: "/images/books/bad-marmot-zh.jpg",
     description: "The bilingual companion edition for families reading side-by-side across languages.",
     buyUrl: "#",
     rotation: -5,
@@ -90,28 +90,28 @@ export const products: Product[] = [
   {
     id: "bundle",
     name: "Silly Marmot Book + Plush",
-    image: "/images/books/shop-bundle.png",
+    image: "/images/products/bundle.jpg",
     price: "$30",
     description: "Our family favorite starter bundle for reading and cuddles.",
   },
   {
     id: "plush",
     name: "Silly Marmot Plush Toy",
-    image: "/images/books/shop-plush.png",
+    image: "/images/products/plush.jpg",
     price: "$10",
     description: "Soft, huggable, and ready for bedtime stories.",
   },
   {
     id: "book",
     name: "Silly Marmots Book",
-    image: "/images/books/shop-book.png",
+    image: "/images/products/silly-marmots-book.jpg",
     price: "$20",
     description: "A warm storybook for growing kind and curious hearts.",
   },
   {
     id: "blue-book",
     name: "Blue Book",
-    image: "/images/books/shop-blue.png",
+    image: "/images/products/blue-book.jpg",
     price: "$20",
     description: "A joyful read for children exploring confidence and friendship.",
   },
