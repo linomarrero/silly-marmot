@@ -13,7 +13,7 @@ export function Sidebar() {
   return (
     <>
       <motion.button
-        className="fixed left-4 top-4 z-50 rounded-xl border border-[#d3bfb1] bg-[#eadccd] px-4 py-3 text-base card-shadow md:hidden"
+        className="fixed left-4 top-4 z-50 rounded-xl border border-[#d3bfb1] bg-[#eadccd] px-5 py-3 text-lg card-shadow md:hidden"
         onClick={() => setOpen((v) => !v)}
         aria-label="Toggle menu"
         whileTap={{ scale: 0.94 }}
@@ -23,7 +23,7 @@ export function Sidebar() {
 
       {open && <div className="fixed inset-0 z-40 bg-[#3d2e22]/20 md:hidden" onClick={() => setOpen(false)} />}
 
-      <nav className={`fixed left-2 z-50 w-30 space-y-3 p-2 transition-transform md:top-16 md:translate-x-0 ${open ? "top-14 translate-x-0" : "top-14 -translate-x-full"} md:block`}>
+      <nav className={`fixed left-2 z-50 w-36 space-y-4 p-2 transition-transform md:top-14 md:translate-x-0 ${open ? "top-14 translate-x-0" : "top-14 -translate-x-full"} md:block`}>
         {navItems.map((item) => {
           const active = pathname === item.href;
           return (

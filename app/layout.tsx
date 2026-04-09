@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lora.variable} ${caveat.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${lora.variable} ${caveat.variable}`}>
       <body className="bg-[var(--bg-cream)] text-[var(--text-brown)] font-serif">
         <div className="texture-overlay" aria-hidden />
         <Sidebar />

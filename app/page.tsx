@@ -3,12 +3,12 @@ import { BotanicalCorner } from "@/components/BotanicalCorner";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
 
 const cards = [
-  { label: "Our Story", href: "/our-story" },
-  { label: "Marmot & Me", href: "/marmot-and-me" },
-  { label: "Books", href: "/books" },
-  { label: "Events", href: "/events" },
-  { label: "Shop", href: "/shop" },
-  { label: "For Parents", href: "/for-parents" },
+  { label: "Our Story", href: "/our-story", bg: "#D2C2B8" },
+  { label: "Marmot & Me", href: "/marmot-and-me", bg: "#A88F82" },
+  { label: "Books", href: "/books", bg: "#BFB1A1" },
+  { label: "Events", href: "/events", bg: "#D9CCC3" },
+  { label: "Shop", href: "/shop", bg: "#AA9283" },
+  { label: "For Parents", href: "/for-parents", bg: "#B3A797" },
 ];
 
 export default function HomePage() {
@@ -18,24 +18,23 @@ export default function HomePage() {
         <BotanicalCorner className="left-4 top-28 h-52 w-28 opacity-70" />
         <h1 className="handwritten text-center text-5xl sm:text-6xl">Growing hearts, growing together...</h1>
 
-        <div className="mt-6 grid items-stretch gap-8 lg:min-h-[560px] lg:grid-cols-[1.05fr_1fr]">
+        <div className="mt-6 grid items-stretch gap-8 lg:min-h-[620px] lg:grid-cols-[1.18fr_1fr]">
           <div className="relative">
-            <div className="grid-band !left-8 !right-8 !top-16 !bottom-2" />
-            <div className="torn-strip !left-10 !right-6 !top-20 !h-64" />
-            <div className="relative z-10 mx-auto max-w-md rounded-[24px] bg-white p-6 shadow-[4px_6px_20px_rgba(100,80,60,0.12)]">
-              <BotanicalCorner className="left-2 top-2 h-24 w-16 opacity-70" />
-              <BotanicalCorner className="bottom-2 right-2 h-24 w-16 opacity-70" flipX />
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[24px]">
+            <div className="grid-band !left-6 !right-6 !top-16 !bottom-4" />
+            <div className="torn-strip !left-8 !right-4 !top-20 !h-72" />
+            <div className="relative z-10 mx-auto max-w-xl rounded-[24px] bg-white p-6 shadow-[4px_6px_20px_rgba(100,80,60,0.12)]">
+              <BotanicalCorner className="left-1 top-2 h-28 w-20 opacity-70" />
+              <BotanicalCorner className="bottom-2 right-1 h-28 w-20 opacity-70" flipX />
+              <div className="relative aspect-[5/4] overflow-hidden rounded-[24px]">
                 <ImageWithFallback
                   src="/images/marmot-hero.png"
                   alt="Silly Marmot character"
                   fill={true}
-                  sizes="(max-width: 1024px) 100vw, 460px"
+                  sizes="(max-width: 1024px) 100vw, 560px"
                   imageClassName="object-cover"
                   fallbackText="Add marmot-hero.png to /public/images/"
                 />
               </div>
-              <p className="handwritten mt-3 text-center text-[48px] leading-[1] text-[#3D2E22]">Silly Marmot</p>
             </div>
           </div>
 
@@ -44,7 +43,8 @@ export default function HomePage() {
               <div key={card.href} className="h-full transition hover:-translate-y-1">
                 <Link
                   href={card.href}
-                  className="relative flex h-full items-center justify-center rounded-[14px] bg-[#B8AFA8] px-3 text-center text-[22px] text-[#3D2E22] shadow-[4px_6px_20px_rgba(100,80,60,0.12)]"
+                  className="relative flex h-full items-center justify-center rounded-[14px] px-3 text-center text-[22px] text-[#3D2E22] shadow-[4px_6px_20px_rgba(100,80,60,0.12)] transition hover:brightness-[0.98]"
+                  style={{ backgroundColor: card.bg }}
                 >
                   <span className="absolute left-1/2 top-[-7px] h-[14px] w-[48px] -translate-x-1/2 rounded-[4px] bg-[#C9C0B8] shadow-[0_2px_6px_rgba(100,80,60,0.14)]" />
                   <span className="block leading-tight">{card.label}</span>

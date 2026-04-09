@@ -94,12 +94,12 @@ body {
 .nav-tab {
   position: relative;
   display: block;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #d8c7b6;
-  padding: 14px 10px;
+  padding: 18px 12px;
   text-align: center;
-  font-size: 18px;
-  line-height: 1.05;
+  font-size: 22px;
+  line-height: 1.1;
   background: #eadfce;
   box-shadow: var(--warm-shadow);
 }
@@ -109,8 +109,8 @@ body {
   position: absolute;
   left: 50%;
   top: -7px;
-  width: 36px;
-  height: 10px;
+  width: 44px;
+  height: 12px;
   border-radius: 3px;
   transform: translateX(-50%) rotate(-4deg);
   background: #efe4d2;
