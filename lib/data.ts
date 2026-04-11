@@ -37,6 +37,12 @@ export type EventItem = {
   /** Optional RSVP, tickets, or event detail link */
   linkUrl?: string;
   linkLabel?: string;
+  /**
+   * Optional flyer: site path like `/images/events/my-flyer.jpg` (add files under `public/images/events/`)
+   * or a full `https://...` URL (e.g. hosted PDF thumbnail or image).
+   */
+  flyerImage?: string;
+  flyerAlt?: string;
 };
 
 export type Feature = {
@@ -52,7 +58,7 @@ export const navItems: NavItem[] = [
   { label: "Books", href: "/books", blurb: "Browse books that grow brave hearts." },
   { label: "Shop", href: "/shop", blurb: "Bring home favorite stories and plush pals." },
   { label: "Events", href: "/events", blurb: "Join warm story hours and meetups." },
-  { label: "For Parents", href: "/for-parents", blurb: "Helpful reading and play resources." },
+  { label: "For Parents", href: "/for-parents", blurb: "A note for grown-ups about this kid-friendly site." },
 ];
 
 export const books: Book[] = [
@@ -103,7 +109,12 @@ export const books: Book[] = [
   },
 ];
 
-/** Edit this list for real dates, venues, and links. Sorted by `date` when rendered. */
+/**
+ * Edit this list for real dates, venues, and links. Sorted by `date` when rendered.
+ * Optional flyer: add PNG/JPG under `public/images/events/` and set e.g.
+ * `flyerImage: "/images/events/story-hour.png", flyerAlt: "Story hour poster"`,
+ * or use a full `https://...` image URL.
+ */
 export const events: EventItem[] = [
   {
     id: "story-hour-may",

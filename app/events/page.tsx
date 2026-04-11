@@ -1,4 +1,24 @@
+import Image from "next/image";
 import { events } from "@/lib/data";
+
+function EventFlyer({ src, alt }: { src: string; alt: string }) {
+  const isRemote = src.startsWith("http://") || src.startsWith("https://");
+
+  if (isRemote) {
+    return (
+      <div className="mt-4 overflow-hidden rounded-xl border border-[#c7d0c3] bg-[#f5f0ea]">
+        {/* Remote flyer URLs (Dropbox, Drive, etc.): plain img avoids Next remotePatterns setup */}
+        <img src={src} alt={alt} className="max-h-[420px] w-full object-contain object-top" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative mt-4 aspect-[3/4] max-h-[420px] w-full overflow-hidden rounded-xl border border-[#c7d0c3] bg-[#f5f0ea]">
+      <Image src={src} alt={alt} fill className="object-contain object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+    </div>
+  );
+}
 
 export default function EventsPage() {
   const sorted = [...events].sort((a, b) => a.date.localeCompare(b.date));
@@ -22,6 +42,7 @@ export default function EventsPage() {
               <p className="mt-2 text-lg font-medium text-[#5d4a3d]">{ev.dateLabel}</p>
               {ev.time ? <p className="mt-1 text-[#5d4a3d]">{ev.time}</p> : null}
               {ev.location ? <p className="mt-1 text-[#5d4a3d]">{ev.location}</p> : null}
+              {ev.flyerImage ? <EventFlyer src={ev.flyerImage} alt={ev.flyerAlt ?? `${ev.title} flyer`} /> : null}
               <p className="mt-3 flex-1 text-lg leading-relaxed text-[#4a3f36]">{ev.description}</p>
               {ev.linkUrl ? (
                 <a
