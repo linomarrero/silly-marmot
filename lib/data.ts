@@ -20,6 +20,23 @@ export type Product = {
   image: string;
   price: string;
   description: string;
+  /** Full URL or path under NEXT_PUBLIC_SHOPIFY_STORE_URL (e.g. /products/bundle-handle). */
+  buyUrl: string;
+};
+
+export type EventItem = {
+  id: string;
+  title: string;
+  /** ISO date (YYYY-MM-DD) for sorting */
+  date: string;
+  /** Human-readable date line */
+  dateLabel: string;
+  time?: string;
+  location?: string;
+  description: string;
+  /** Optional RSVP, tickets, or event detail link */
+  linkUrl?: string;
+  linkLabel?: string;
 };
 
 export type Feature = {
@@ -44,7 +61,7 @@ export const books: Book[] = [
     title: "Silly Marmots",
     cover: "/images/books/silly-marmots-en.jpg",
     description: "A playful story about kindness, imagination, and finding joy in little moments.",
-    buyUrl: "#",
+    buyUrl: "/products/silly-marmots",
     rotation: -6,
     className: "left-10 top-12",
   },
@@ -53,7 +70,7 @@ export const books: Book[] = [
     title: "Blue",
     cover: "/images/books/blue.jpg",
     description: "Blue learns that being different can be a superpower when friends cheer you on.",
-    buyUrl: "#",
+    buyUrl: "/products/blue",
     rotation: 4,
     className: "left-64 top-44",
   },
@@ -62,7 +79,7 @@ export const books: Book[] = [
     title: "The Only Bad Marmot",
     cover: "/images/books/only-bad-marmot.jpg",
     description: "A heartfelt tale about mistakes, repair, and second chances in a loving community.",
-    buyUrl: "#",
+    buyUrl: "/products/the-only-bad-marmot",
     rotation: -3,
     className: "left-[26rem] top-20",
   },
@@ -71,7 +88,7 @@ export const books: Book[] = [
     title: "Silly Marmots (Bilingual)",
     cover: "/images/books/silly-marmots-zh.jpg",
     description: "A bilingual edition that celebrates family language and shared storytelling.",
-    buyUrl: "#",
+    buyUrl: "/products/silly-marmots-bilingual",
     rotation: 7,
     className: "left-[42rem] top-32",
   },
@@ -80,9 +97,40 @@ export const books: Book[] = [
     title: "The Only Bad Marmot (Bilingual)",
     cover: "/images/books/bad-marmot-zh.jpg",
     description: "The bilingual companion edition for families reading side-by-side across languages.",
-    buyUrl: "#",
+    buyUrl: "/products/the-only-bad-marmot-bilingual",
     rotation: -5,
     className: "left-[24rem] top-80",
+  },
+];
+
+/** Edit this list for real dates, venues, and links. Sorted by `date` when rendered. */
+export const events: EventItem[] = [
+  {
+    id: "story-hour-may",
+    title: "Silly Marmot Story Hour",
+    date: "2026-05-17",
+    dateLabel: "Saturday, May 17, 2026",
+    time: "10:30 a.m. – 11:30 a.m.",
+    location: "Local library (TBA)",
+    description: "A cozy read-aloud with crafts and a plush meet-and-greet for little readers.",
+  },
+  {
+    id: "summer-craft",
+    title: "Summer Craft & Color Day",
+    date: "2026-06-21",
+    dateLabel: "Sunday, June 21, 2026",
+    time: "2:00 p.m. – 4:00 p.m.",
+    location: "Community center (TBA)",
+    description: "Coloring sheets, sticker scenes, and photo ops with Silly Marmot friends.",
+  },
+  {
+    id: "bilingual-circle",
+    title: "Bilingual Story Circle",
+    date: "2026-07-12",
+    dateLabel: "Sunday, July 12, 2026",
+    time: "11:00 a.m. – 12:00 p.m.",
+    location: "Online (link TBA)",
+    description: "Families read together in English and Chinese with gentle discussion prompts.",
   },
 ];
 
@@ -93,6 +141,7 @@ export const products: Product[] = [
     image: "/images/products/bundle.jpg",
     price: "$30",
     description: "Our family favorite starter bundle for reading and cuddles.",
+    buyUrl: "/products/silly-marmot-book-plush-bundle",
   },
   {
     id: "plush",
@@ -100,6 +149,7 @@ export const products: Product[] = [
     image: "/images/products/plush.jpg",
     price: "$10",
     description: "Soft, huggable, and ready for bedtime stories.",
+    buyUrl: "/products/silly-marmot-plush",
   },
   {
     id: "book",
@@ -107,6 +157,7 @@ export const products: Product[] = [
     image: "/images/products/silly-marmots-book.jpg",
     price: "$20",
     description: "A warm storybook for growing kind and curious hearts.",
+    buyUrl: "/products/silly-marmots",
   },
   {
     id: "blue-book",
@@ -114,6 +165,7 @@ export const products: Product[] = [
     image: "/images/products/blue-book.jpg",
     price: "$20",
     description: "A joyful read for children exploring confidence and friendship.",
+    buyUrl: "/products/blue",
   },
 ];
 

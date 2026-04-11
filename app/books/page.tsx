@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { shopifyBuyUrl } from "@/lib/shopify";
 
 type BookItem = {
   id: string;
@@ -11,18 +12,20 @@ type BookItem = {
   rotation: number;
   position: string;
   description: string;
+  buyUrl: string;
 };
 
 const books: BookItem[] = [
-  { id: "silly-en", title: "Silly Marmots (English)", image: "/images/books/silly-marmots-en.jpg", rotation: -6, position: "left-[3%] top-[4%]", description: "An adventure full of heart, humor, and gentle growth." },
-  { id: "silly-zh", title: "Silly Marmots (Chinese)", image: "/images/books/silly-marmots-zh.jpg", rotation: 4, position: "right-[4%] top-[3%]", description: "A warm bilingual reading experience for families." },
-  { id: "blue", title: "Blue the Investment Banker Dinosaur", image: "/images/books/blue.jpg", rotation: -3, position: "left-[12%] top-[40%]", description: "A quirky story about confidence and belonging." },
-  { id: "bad", title: "The Only Bad Marmot", image: "/images/books/only-bad-marmot.jpg", rotation: 7, position: "left-[38%] top-[38%]", description: "A tale of mistakes, repair, and second chances." },
-  { id: "bad-zh", title: "壞壞小地鼠 (Chinese)", image: "/images/books/bad-marmot-zh.jpg", rotation: -5, position: "right-[4%] top-[45%]", description: "Chinese edition for shared family storytime." },
+  { id: "silly-en", title: "Silly Marmots (English)", image: "/images/books/silly-marmots-en.jpg", rotation: -6, position: "left-[3%] top-[4%]", description: "An adventure full of heart, humor, and gentle growth.", buyUrl: "/products/silly-marmots" },
+  { id: "silly-zh", title: "Silly Marmots (Chinese)", image: "/images/books/silly-marmots-zh.jpg", rotation: 4, position: "right-[4%] top-[3%]", description: "A warm bilingual reading experience for families.", buyUrl: "/products/silly-marmots-bilingual" },
+  { id: "blue", title: "Blue the Investment Banker Dinosaur", image: "/images/books/blue.jpg", rotation: -3, position: "left-[12%] top-[40%]", description: "A quirky story about confidence and belonging.", buyUrl: "/products/blue" },
+  { id: "bad", title: "The Only Bad Marmot", image: "/images/books/only-bad-marmot.jpg", rotation: 7, position: "left-[38%] top-[38%]", description: "A tale of mistakes, repair, and second chances.", buyUrl: "/products/the-only-bad-marmot" },
+  { id: "bad-zh", title: "壞壞小地鼠 (Chinese)", image: "/images/books/bad-marmot-zh.jpg", rotation: -5, position: "right-[4%] top-[45%]", description: "Chinese edition for shared family storytime.", buyUrl: "/products/the-only-bad-marmot-bilingual" },
 ];
 
 export default function BooksPage() {
   const [active, setActive] = useState<BookItem | null>(null);
+  const activeBuy = active ? shopifyBuyUrl(active.buyUrl) : "#";
 
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-4 pb-10">
@@ -88,7 +91,20 @@ export default function BooksPage() {
               </div>
               <h2 className="mt-4 text-3xl">{active.title}</h2>
               <p className="mt-2 text-lg">{active.description}</p>
-              <button className="mt-5 rounded-xl bg-[#A8B09A] px-5 py-2 text-white">Buy Now</button>
+              {activeBuy === "#" ? (
+                <p className="mt-5 rounded-xl border border-dashed border-[#c7bfb4] bg-[#faf6f0] px-4 py-3 text-sm text-[#6b5c4f]">
+                  Online ordering is almost here. Add your Shopify URL in environment settings to turn on Buy links.
+                </p>
+              ) : (
+                <a
+                  href={activeBuy}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-block rounded-xl bg-[#A8B09A] px-5 py-2 text-white transition hover:brightness-95"
+                >
+                  Buy Now
+                </a>
+              )}
             </motion.div>
           </motion.div>
         )}

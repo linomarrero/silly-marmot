@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import type { Book } from "@/lib/data";
+import { shopifyBuyUrl } from "@/lib/shopify";
 
 export function BooksScatter({ books }: { books: Book[] }) {
   const [activeBook, setActiveBook] = useState<Book | null>(null);
@@ -71,12 +72,20 @@ export function BooksScatter({ books }: { books: Book[] }) {
               </div>
               <h3 className="mt-4 text-2xl italic">{activeBook.title}</h3>
               <p className="mt-2 leading-7 text-[#564437]">{activeBook.description}</p>
-              <a
-                href={activeBook.buyUrl}
-                className="mt-5 inline-block rounded-xl bg-[var(--sage)] px-5 py-2 text-[#f9f5ee] transition hover:brightness-95"
-              >
-                Buy Now
-              </a>
+              {shopifyBuyUrl(activeBook.buyUrl) === "#" ? (
+                <span className="mt-5 inline-block rounded-xl border border-dashed border-[#c9bbae] bg-[#faf6f0] px-4 py-2 text-sm text-[#6b5c4f]">
+                  Online ordering is almost here. Connect your store URL in site settings to enable Buy links.
+                </span>
+              ) : (
+                <a
+                  href={shopifyBuyUrl(activeBook.buyUrl)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-block rounded-xl bg-[var(--sage)] px-5 py-2 text-[#f9f5ee] transition hover:brightness-95"
+                >
+                  Buy Now
+                </a>
+              )}
             </motion.div>
           </motion.div>
         )}
