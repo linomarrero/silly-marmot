@@ -124,6 +124,8 @@ export const events: EventItem[] = [
     time: "10:30 a.m. – 11:30 a.m.",
     location: "Local library (TBA)",
     description: "A cozy read-aloud with crafts and a plush meet-and-greet for little readers.",
+    flyerImage: "/images/events/story-hour-may.jpg",
+    flyerAlt: "Poster for Silly Marmot Story Hour — May 17, 2026",
   },
   {
     id: "summer-craft",
