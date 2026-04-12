@@ -28,9 +28,9 @@ export default function OurStoryPage() {
         <article className="mx-auto w-full max-w-xl rounded-2xl bg-[#f8f1e8]/60 p-6 card-shadow">
           <div className="mb-5 h-[1px] w-28 bg-[#A8B09A]" />
           <p className="text-[24px] leading-relaxed text-[#3D2E22]">
-            Two years ago, during his senior year of high school, Amari began to wonder — how could he and his mom keep doing the things they love, together, even as life changed? So he started writing. Drawing from his own childhood, he created the stories that became The Silly Marmots series, then invited her to bring them to life beside him.
-From clay crafts and baked cookies to learning music, playing tennis, and cheering each other on through speech and debate — they've shared the highlights and walked through the hard moments hand in hand. Silly Marmots was born from a simple, heartfelt wish: that "together" wouldn't fade with time.
-We believe childhood is the most precious season for building connection — and togetherness isn't just a moment. It's a habit of the heart.
+            During his senior year of high school, Amari began to wonder — how could he and his mom keep doing the things they love, together? So he started writing. Drawing from his own childhood, he created *The Silly Marmots* series, then invited her to bring the books to life beside him.
+From clay crafts and cookies to music, tennis, and speech and debate — they've shared it all. Silly Marmots was born from one simple wish: that "together" wouldn't fade with time.
+Because togetherness isn't just a moment. It's a habit of the heart.
           </p>
         </article>
       </section>
