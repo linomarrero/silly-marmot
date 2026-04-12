@@ -8,6 +8,8 @@ export default function ForParentsPage() {
             Silly Marmot is made for kids to learn, laugh, and have fun. Stories, games, and activities here are
             written with young readers in mind—wholesome, imaginative, and parent-approved. We hope your family
             enjoys exploring together.
+
+            Have Questions? Email us at: amari@theproperlizard.com
           </p>
           <p className="mt-6 text-lg italic text-[#5d4a3d]">Thank you for sharing storytime with us.</p>
         </div>
