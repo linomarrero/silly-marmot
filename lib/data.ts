@@ -170,7 +170,7 @@ export const products: Product[] = [
     image: "/images/products/silly-marmots-book.jpg",
     price: "$20",
     description: "A warm storybook for growing kind and curious hearts.",
-    buyUrl: "https://theproperlizard.com/products/silly-marmots-books",
+    buyUrl: "https://theproperlizard.com/products/silly-marmots-book?variant=51473667260704",
   },
   {
     id: "blue-book",
