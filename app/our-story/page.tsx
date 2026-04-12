@@ -28,37 +28,9 @@ export default function OurStoryPage() {
         <article className="mx-auto w-full max-w-xl rounded-2xl bg-[#f8f1e8]/60 p-6 card-shadow">
           <div className="mb-5 h-[1px] w-28 bg-[#A8B09A]" />
           <p className="text-[24px] leading-relaxed text-[#3D2E22]">
-            Two years ago, during his senior year of high school, Amari realized that very soon, his mom would be entering an empty-nest season.
-
-He began to wonder—
-
-How could her life remain full and joyful?
-
-More importantly, how could we keep doing the things we love, together?
-
-So he began writing. Drawing from his own experiences growing up, he created the stories that would become The Silly Marmots series. Then he invited me to join him—to bring these warm and whimsical little books to life side by side.
-
-From little Amari to the 20-year-old college student he is today,
-
-we’ve made clay crafts, baked cookies, built small experiments;
-
-as he grew, we learned music together, played tennis,
-
-he stepped into speech and debate, and I stepped into becoming a parent judge.
-
-We’ve shared the bright highlights,
-
-and we’ve walked through challenges and disappointments hand in hand.
-
-The birth of Silly Marmots came from a simple yet deeply heartfelt wish—
-
-that “together” would not fade with time.
-
-We believe childhood is the most precious season for building connection between parent and child.
-
-And togetherness is not just a moment—
-
-it’s a habit of the heart we hope to carry for a lifetime.
+            Two years ago, during his senior year of high school, Amari began to wonder — how could he and his mom keep doing the things they love, together, even as life changed? So he started writing. Drawing from his own childhood, he created the stories that became The Silly Marmots series, then invited her to bring them to life beside him.
+From clay crafts and baked cookies to learning music, playing tennis, and cheering each other on through speech and debate — they've shared the highlights and walked through the hard moments hand in hand. Silly Marmots was born from a simple, heartfelt wish: that "together" wouldn't fade with time.
+We believe childhood is the most precious season for building connection — and togetherness isn't just a moment. It's a habit of the heart.
           </p>
         </article>
       </section>
