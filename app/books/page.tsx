@@ -19,7 +19,7 @@ const books: BookItem[] = [
     title: "Silly Marmots (English)",
     image: "/images/books/silly-marmots-en.jpg",
     rotation: -6,
-    position: "left-[4%] top-[4%]",
+    position: "left-[3%] top-[4%]",
     description:
       "Meet a merry crew of marmots who stumble through big feelings and small adventures with humor and heart. This English edition is perfect for read-alouds at bedtime or in the classroom—gentle lessons about kindness and curiosity hide inside every giggle. Young listeners see that being silly and being thoughtful can go hand in paw.",
   },
@@ -28,7 +28,7 @@ const books: BookItem[] = [
     title: "Silly Marmots (Chinese)",
     image: "/images/books/silly-marmots-zh.jpg",
     rotation: 4,
-    position: "right-[4%] top-[5%]",
+    position: "right-[3%] top-[4%]",
     description:
       "The same warm, playful world of Silly Marmots, offered for families who read or learn together in Chinese. Side-by-side storytelling gets easier when the pictures carry the emotion and the text meets caregivers where they are. It is a lovely bridge for bilingual homes and for kids building confidence in a new language.",
   },
@@ -37,7 +37,7 @@ const books: BookItem[] = [
     title: "Blue the Investment Banker Dinosaur",
     image: "/images/books/blue.jpg",
     rotation: -3,
-    position: "left-[6%] top-[76%]",
+    position: "left-[10%] top-[48%]",
     description:
       "Blue is not like everyone else—and at first that feels loud and awkward. This offbeat story turns confidence into a superpower when friends show up with cheer instead of judgment. It is for any child who has felt “too different” and for grown-ups who want a funny, tender way to talk about belonging.",
   },
@@ -46,7 +46,7 @@ const books: BookItem[] = [
     title: "The Only Bad Marmot",
     image: "/images/books/only-bad-marmot.jpg",
     rotation: 7,
-    position: "left-[36%] top-[34%]",
+    position: "left-[38%] top-[38%]",
     description:
       "What happens when someone makes a big mistake in a community that cares? This English edition walks through regret, repair, and second chances without talking down to kids. The tone stays hopeful: nobody is only their worst moment, and love can make room for growth.",
   },
@@ -55,7 +55,7 @@ const books: BookItem[] = [
     title: "壞壞小地鼠 (The Only Bad Marmot — Chinese)",
     image: "/images/books/bad-marmot-zh.jpg",
     rotation: -5,
-    position: "right-[5%] top-[76%]",
+    position: "right-[6%] top-[46%]",
     description:
       "The Chinese edition of the repair-and-redemption story families already love in English. It is built for shared reading across generations and languages, with artwork that helps younger readers follow the emotional beats. Ideal when you want the same heartfelt message in the language your household uses most at home.",
   },
@@ -93,7 +93,7 @@ export default function BooksPage() {
           ))}
         </div>
 
-        <div className="relative hidden min-h-[1120px] md:block">
+        <div className="relative hidden min-h-[700px] md:min-h-[740px] lg:min-h-[760px] md:block">
           {books.map((book) => (
             <motion.button
               key={book.id}
