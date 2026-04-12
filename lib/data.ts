@@ -152,7 +152,7 @@ export const products: Product[] = [
     image: "/images/products/bundle.jpg",
     price: "$30",
     description: "Our family favorite starter bundle for reading and cuddles.",
-    buyUrl: "/products/silly-marmot-book-plush-bundle",
+    buyUrl: "https://theproperlizard.com/products/marmot-bundle",
   },
   {
     id: "plush",
@@ -160,7 +160,7 @@ export const products: Product[] = [
     image: "/images/products/plush.jpg",
     price: "$10",
     description: "Soft, huggable, and ready for bedtime stories.",
-    buyUrl: "/products/silly-marmot-plush",
+    buyUrl: "https://theproperlizard.com/products/silly-marmot-toy",
   },
   {
     id: "book",
@@ -168,7 +168,7 @@ export const products: Product[] = [
     image: "/images/products/silly-marmots-book.jpg",
     price: "$20",
     description: "A warm storybook for growing kind and curious hearts.",
-    buyUrl: "/products/silly-marmots",
+    buyUrl: "https://theproperlizard.com/products/silly-marmots-books",
   },
   {
     id: "blue-book",
@@ -176,7 +176,7 @@ export const products: Product[] = [
     image: "/images/products/blue-book.jpg",
     price: "$20",
     description: "A joyful read for children exploring confidence and friendship.",
-    buyUrl: "/products/blue",
+    buyUrl: "https://theproperlizard.com/products/blue-the-investment-banker-dinosaur",
   },
 ];
 
