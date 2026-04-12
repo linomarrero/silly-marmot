@@ -1,63 +1,64 @@
 import Image from "next/image";
 import { events } from "@/lib/data";
 
-function EventFlyer({ src, alt }: { src: string; alt: string }) {
+function EventPoster({ src, alt }: { src: string; alt: string }) {
   const isRemote = src.startsWith("http://") || src.startsWith("https://");
 
   if (isRemote) {
     return (
-      <div className="mt-4 overflow-hidden rounded-xl border border-[#c7d0c3] bg-[#f5f0ea]">
-        {/* Remote flyer URLs (Dropbox, Drive, etc.): plain img avoids Next remotePatterns setup */}
-        <img src={src} alt={alt} className="max-h-[420px] w-full object-contain object-top" />
+      <div className="overflow-hidden rounded-2xl border border-[#d8cec2] bg-[#faf6f0] shadow-md">
+        <img src={src} alt={alt} className="mx-auto block h-auto max-h-[85vh] w-full object-contain" />
       </div>
     );
   }
 
   return (
-    <div className="relative mt-4 aspect-[3/4] max-h-[420px] w-full overflow-hidden rounded-xl border border-[#c7d0c3] bg-[#f5f0ea]">
-      <Image src={src} alt={alt} fill className="object-contain object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+    <div className="relative mx-auto aspect-[3/4] w-full max-w-3xl max-h-[85vh] overflow-hidden rounded-2xl border border-[#d8cec2] bg-[#faf6f0] shadow-md">
+      <Image src={src} alt={alt} fill className="object-contain object-center" sizes="(max-width: 768px) 100vw, 768px" />
     </div>
   );
 }
 
 export default function EventsPage() {
   const sorted = [...events].sort((a, b) => a.date.localeCompare(b.date));
+  const withFlyers = sorted.filter((ev) => Boolean(ev.flyerImage));
+  const withoutFlyers = sorted.filter((ev) => !ev.flyerImage);
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-6xl items-center px-4 pb-10">
-      <section className="w-full rounded-2xl border border-[#d8cec2] bg-[#f8f1e8] p-8 card-shadow">
-        <h1 className="text-center text-5xl md:text-6xl">Events</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-xl leading-relaxed text-[#5d4a3d] md:text-2xl">
-          Storytime gatherings, craft days, and family meetups. Dates and venues are posted here as they are confirmed.
-        </p>
+    <main className="mx-auto min-h-screen max-w-6xl px-4 pb-16 pt-6 md:pt-10">
+      <div className="mx-auto max-w-4xl text-center">
+        <h1 className="handwritten text-5xl leading-tight text-[#4a3f36] md:text-6xl lg:text-7xl">
+          Check out our upcoming events!
+        </h1>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {sorted.map((ev) => (
-            <article
-              key={ev.id}
-              className="flex flex-col rounded-2xl border border-[#c7d0c3] bg-[#dfe8dc] p-6 text-left card-shadow"
-            >
-              <p className="text-3xl">🐾</p>
-              <h2 className="mt-2 text-2xl font-semibold text-[#3d342c]">{ev.title}</h2>
-              <p className="mt-2 text-lg font-medium text-[#5d4a3d]">{ev.dateLabel}</p>
-              {ev.time ? <p className="mt-1 text-[#5d4a3d]">{ev.time}</p> : null}
-              {ev.location ? <p className="mt-1 text-[#5d4a3d]">{ev.location}</p> : null}
-              {ev.flyerImage ? <EventFlyer src={ev.flyerImage} alt={ev.flyerAlt ?? `${ev.title} flyer`} /> : null}
-              <p className="mt-3 flex-1 text-lg leading-relaxed text-[#4a3f36]">{ev.description}</p>
-              {ev.linkUrl ? (
-                <a
-                  href={ev.linkUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-[#A8B09A] px-4 py-2.5 text-center text-white transition hover:brightness-95"
-                >
-                  {ev.linkLabel ?? "Details"}
-                </a>
-              ) : null}
-            </article>
-          ))}
-        </div>
-      </section>
+        {withFlyers.length === 0 ? (
+          <p className="mt-12 text-xl text-[#5d4a3d]">Event posters coming soon—we can&apos;t wait to share them.</p>
+        ) : (
+          <div className="mt-12 flex flex-col items-stretch gap-14 md:mt-16 md:gap-20">
+            {withFlyers.map((ev) => (
+              <figure key={ev.id} className="mx-auto w-full max-w-3xl">
+                <EventPoster src={ev.flyerImage!} alt={ev.flyerAlt ?? `${ev.title} — ${ev.dateLabel}`} />
+                {ev.linkUrl ? (
+                  <figcaption className="mt-5">
+                    <a
+                      href={ev.linkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg text-[#5d4a3d] underline decoration-[#A8B09A] decoration-2 underline-offset-4 transition hover:text-[#3d342c]"
+                    >
+                      {ev.linkLabel ?? "Details & RSVP"}
+                    </a>
+                  </figcaption>
+                ) : null}
+              </figure>
+            ))}
+          </div>
+        )}
+
+        {withoutFlyers.length > 0 && withFlyers.length > 0 ? (
+          <p className="mt-14 text-lg text-[#5d4a3d] md:text-xl">More events are in the works—check back for new posters.</p>
+        ) : null}
+      </div>
     </main>
   );
 }

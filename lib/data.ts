@@ -110,10 +110,10 @@ export const books: Book[] = [
 ];
 
 /**
- * Edit this list for real dates, venues, and links. Sorted by `date` when rendered.
- * Optional flyer: add PNG/JPG under `public/images/events/` and set e.g.
- * `flyerImage: "/images/events/story-hour.png", flyerAlt: "Story hour poster"`,
- * or use a full `https://...` image URL.
+ * Edit this list for real dates and links. Sorted by `date` when rendered.
+ * The Events page shows each event that has `flyerImage` as a large poster; add PNG/JPG under
+ * `public/images/events/` (e.g. `flyerImage: "/images/events/story-hour.png"`) or a full `https://...` image URL.
+ * Optional `linkUrl` / `linkLabel` appear as a text link under the poster.
  */
 export const events: EventItem[] = [
   {
